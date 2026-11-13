@@ -196,3 +196,68 @@ main p {
     width: 100%;
   }
 }
+
+/* PLACE DETAILS PAGE */
+
+.place-details-page {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 50px 30px;
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 25px;
+  color: #087e83;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.place-details-content {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+}
+
+.place-details-content h1 {
+  color: #087e83;
+  margin-bottom: 10px;
+}
+
+.place-details-content h2 {
+  margin-top: 25px;
+  margin-bottom: 10px;
+}
+
+.place-details-content p {
+  line-height: 1.7;
+  color: #555;
+}
+
+.place-details-image {
+  width: 100%;
+  max-height: 420px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.place-category {
+  color: #087e83 !important;
+  text-transform: capitalize;
+}
+
+.place-information {
+  margin-top: 25px;
+}
+
+@media (max-width: 600px) {
+  .place-details-page {
+    padding: 30px 18px;
+  }
+
+  .place-details-content {
+    padding: 20px;
+  }
+}
