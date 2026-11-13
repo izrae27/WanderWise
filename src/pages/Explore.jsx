@@ -1,4 +1,3 @@
-
 import { useState } from 'react'
 import { useSearchParams, useNavigate } from 'react-router-dom'
 import { getPlacesByCity } from '../services/opentripmap'
@@ -45,22 +44,20 @@ export default function Explore() {
   }
 
   const filteredPlaces = places
-  .filter((place) => place.name && place.name.trim() !== '')
-  .filter((place) => {
-      if (category === 'all') return true
-
+    .filter((place) => place.name && place.name.trim() !== '')
+    .filter((place) => {
       const kinds = (place.kinds || '').toLowerCase()
 
-      if (category === 'natural') {
-        return kinds.includes('natural')
-      }
-
+      if (category === 'all') return true
+      if (category === 'natural') return kinds.includes('natural')
       if (category === 'cultural') {
         return kinds.includes('cultural') || kinds.includes('architecture')
       }
-
       if (category === 'historic') {
         return kinds.includes('historic') || kinds.includes('historical')
+      }
+      if (category === 'interesting') {
+        return kinds.includes('interesting')
       }
 
       return true
@@ -100,14 +97,15 @@ export default function Explore() {
           <option value="natural">Natural Attractions</option>
           <option value="cultural">Cultural Places</option>
           <option value="historic">Historic Places</option>
+          <option value="interesting">Interesting Places</option>
         </select>
 
         <select
           value={sort}
           onChange={(event) => setSort(event.target.value)}
         >
-          <option value="name">Sort A to Z</option>
-          <option value="name-desc">Sort Z to A</option>
+          <option value="name">Sort by Name</option>
+          <option value="name-desc">Name: Z to A</option>
         </select>
       </form>
 

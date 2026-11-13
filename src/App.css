@@ -1,3 +1,4 @@
+
 #root {
   min-height: 100vh;
 }
@@ -77,6 +78,8 @@ main p {
     padding: 40px 20px;
   }
 }
+
+/* HOME PAGE */
 
 .home-page {
   max-width: none;
@@ -259,5 +262,163 @@ main p {
 
   .place-details-content {
     padding: 20px;
+  }
+}
+
+/* EXPLORE PAGE */
+
+.explore-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 30px;
+}
+
+.explore-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.explore-header h1 {
+  color: #087e83;
+  font-size: 36px;
+  margin-bottom: 12px;
+}
+
+.explore-header p {
+  color: #666;
+  font-size: 16px;
+}
+
+.explore-controls {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 35px;
+}
+
+.explore-controls input,
+.explore-controls select {
+  padding: 13px 16px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+  background: white;
+}
+
+.explore-controls input {
+  flex: 1;
+  min-width: 220px;
+}
+
+.explore-controls select {
+  min-width: 180px;
+  cursor: pointer;
+}
+
+.explore-controls input:focus,
+.explore-controls select:focus {
+  border-color: #087e83;
+}
+
+.explore-controls button {
+  background: #087e83;
+  color: white;
+  border: none;
+  padding: 13px 20px;
+  border-radius: 8px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.explore-controls button:hover {
+  background: #06676b;
+}
+
+.explore-controls button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.destination-results {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 20px;
+  padding: 20px 0;
+}
+
+.destination-card {
+  background: #ffffff;
+  border: 1px solid #e5eeee;
+  border-radius: 12px;
+  padding: 22px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+  text-align: left;
+}
+
+.destination-card-content h3 {
+  color: #087e83;
+  margin-top: 0;
+}
+
+.destination-card-content p {
+  color: #64777d;
+  font-size: 14px;
+  text-transform: capitalize;
+}
+
+.destination-card-content button {
+  background: #087e83;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 7px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.destination-card-content button:hover {
+  background: #06676b;
+}
+
+.search-message,
+.search-error,
+.results-heading {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.search-error {
+  color: #c0392b !important;
+}
+
+.results-heading {
+  color: #153b46;
+  font-size: 24px;
+}
+
+@media (max-width: 600px) {
+  .explore-page {
+    padding: 35px 18px;
+  }
+
+  .explore-header h1 {
+    font-size: 28px;
+  }
+
+  .explore-controls {
+    flex-direction: column;
+  }
+
+  .explore-controls input,
+  .explore-controls select,
+  .explore-controls button {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .destination-results {
+    grid-template-columns: 1fr;
   }
 }
